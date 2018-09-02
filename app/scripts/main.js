@@ -21,7 +21,7 @@ const xhr = new XMLHttpRequest()
 
 function selectValue() {
   let promise = new Promise((resolve, reject) => {
-    xhr.open("GET", select.value, true)
+    xhr.open('GET', select.value, true)
     xhr.onload = () => resolve(xhr.responseText)
     xhr.onerror = () => reject(xhr.statusText)
     xhr.send()
@@ -55,7 +55,7 @@ function selectValue() {
       }
     },
     error => {
-      console.error("Rejected: " + error)
+      console.error('Rejected: ' + error)
     }
     );
 }
