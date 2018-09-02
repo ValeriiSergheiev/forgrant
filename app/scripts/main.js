@@ -11,6 +11,11 @@ const hourChange = document.getElementsByClassName('hour-change')
 const dayChange = document.getElementsByClassName('day-change')
 const weekChange = document.getElementsByClassName('week-change')
 const monthChange = document.getElementsByClassName('month-change')
+let currencyObj = {}
+let hourChangeFlag = false
+let dayChangeFlag = false
+let weekChangeFlag = false
+let monthChangeFlag = false
 
 const xhr = new XMLHttpRequest()
 
@@ -25,31 +30,78 @@ function selectValue() {
   promise
   .then(
     result => {
-      let currencyObj = JSON.parse(result)
+      currencyObj = JSON.parse(result)
+
       for (let i = 0; i < priceAsk.length; i++) {
+        checkbox[i].checked = false
+
         priceAsk[i].innerHTML = '$' + currencyObj.ask
-        hourChange[i].innerHTML = currencyObj.changes.price.hour
-        dayChange[i].innerHTML = currencyObj.changes.price.day
-        weekChange[i].innerHTML = currencyObj.changes.price.week
-        monthChange[i].innerHTML = currencyObj.changes.price.month
+
+        currencyObj.changes.price.hour < 0 ? (hourChangeFlag = true) : (hourChangeFlag = false)
+        hourChange[i].innerHTML = '<span>+</span>' + currencyObj.changes.price.hour + '$'
+        hourChange[i].classList.toggle('text-red', hourChangeFlag)
+
+        currencyObj.changes.price.day < 0 ? (dayChangeFlag = true) : (dayChangeFlag = false)
+        dayChange[i].innerHTML = '<span>+</span>' + currencyObj.changes.price.day + '$'
+        dayChange[i].classList.toggle('text-red', dayChangeFlag)
+
+        currencyObj.changes.price.week < 0 ? (weekChangeFlag = true) : (weekChangeFlag = false)
+        weekChange[i].innerHTML = '<span>+</span>' + currencyObj.changes.price.week + '$'
+        weekChange[i].classList.toggle('text-red', weekChangeFlag)
+
+        currencyObj.changes.price.month < 0 ? (monthChangeFlag = true) : (monthChangeFlag = false)
+        monthChange[i].innerHTML = '<span>+</span>' + currencyObj.changes.price.month + '$'
+        monthChange[i].classList.toggle('text-red', monthChangeFlag)
       }
     },
     error => {
       console.error("Rejected: " + error)
     }
-  );
+    );
 }
+/* Get data on page load */
+selectValue()
 
-/*var ajax = new XMLHttpRequest();
-ajax.onreadystatechange = function() {
-  if (ajax.readyState == 4 && ajax.status == 200) {
-    let response = ajax.responseText;
-    console.log('Ajax:' + response);
+
+const checkbox = document.getElementsByClassName('checkbox')
+let checkboxChecked = []
+function toggleCheck() {
+  for (let i = 0; i < checkbox.length; i++) {
+    checkboxChecked[i] = checkbox[i].checked
+    if (checkboxChecked[i]) {
+      currencyObj.changes.percent.hour < 0 ? (hourChangeFlag = true) : (hourChangeFlag = false)
+      hourChange[i].innerHTML = '<span>+</span>' + currencyObj.changes.percent.hour + '%'
+      hourChange[i].classList.toggle('text-red', hourChangeFlag)
+
+      currencyObj.changes.percent.day < 0 ? (dayChangeFlag = true) : (dayChangeFlag = false)
+      dayChange[i].innerHTML = '<span>+</span>' + currencyObj.changes.percent.day + '%'
+      dayChange[i].classList.toggle('text-red', dayChangeFlag)
+
+      currencyObj.changes.percent.week < 0 ? (weekChangeFlag = true) : (weekChangeFlag = false)
+      weekChange[i].innerHTML = '<span>+</span>' + currencyObj.changes.percent.week + '%'
+      weekChange[i].classList.toggle('text-red', weekChangeFlag)
+
+      currencyObj.changes.percent.month < 0 ? (monthChangeFlag = true) : (monthChangeFlag = false)
+      monthChange[i].innerHTML = '<span>+</span>' + currencyObj.changes.percent.month + '%'
+      monthChange[i].classList.toggle('text-red', monthChangeFlag)
+    } else {
+      currencyObj.changes.price.hour < 0 ? (hourChangeFlag = true) : (hourChangeFlag = false)
+      hourChange[i].innerHTML = '<span>+</span>' + currencyObj.changes.price.hour + '$'
+      hourChange[i].classList.toggle('text-red', hourChangeFlag)
+
+      currencyObj.changes.price.day < 0 ? (dayChangeFlag = true) : (dayChangeFlag = false)
+      dayChange[i].innerHTML = '<span>+</span>' + currencyObj.changes.price.day + '$'
+      dayChange[i].classList.toggle('text-red', dayChangeFlag)
+
+      currencyObj.changes.price.week < 0 ? (weekChangeFlag = true) : (weekChangeFlag = false)
+      weekChange[i].innerHTML = '<span>+</span>' + currencyObj.changes.price.week + '$'
+      weekChange[i].classList.toggle('text-red', weekChangeFlag)
+
+      currencyObj.changes.price.month < 0 ? (monthChangeFlag = true) : (monthChangeFlag = false)
+      monthChange[i].innerHTML = '<span>+</span>' + currencyObj.changes.price.month + '$'
+      monthChange[i].classList.toggle('text-red', monthChangeFlag)
+    }
   }
-};
-ajax.open("GET", select.value, true);
-ajax.setRequestHeader("Content-type", "application/json");
-ajax.send();*/
-
-
+  // console.log(currencyObj);
+}
 

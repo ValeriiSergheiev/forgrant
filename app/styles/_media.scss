@@ -7,7 +7,17 @@
 
     /* Medium Devices, Desktops */
     @media only screen and (max-width : 992px) {
+      main {
+        justify-content: space-around;
+      }
 
+      .exchange-item {
+        margin: 20px;
+      }
+
+      .currency-select {
+        margin-bottom: 20px;
+      }
     }
 
     /* Small Devices, Tablets */

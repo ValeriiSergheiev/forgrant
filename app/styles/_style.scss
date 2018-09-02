@@ -20,8 +20,8 @@
 
 main {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
-  margin-top: 50px;
 }
 
 .ethereum {
@@ -40,6 +40,7 @@ main {
   width: 305px;
   max-width: 305px;
   padding: 20px 30px;
+  margin-top: 50px;
   background-size: cover;
   border-radius: 10px;
   overflow: hidden;
@@ -89,3 +90,57 @@ p.text-green {
   color: rgb(112,196,70);
   opacity: 1;
 }
+
+.text-red {
+  color: rgb(200,14,36) !important;
+  span {
+    display: none;
+  }
+}
+
+/* toggle button */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 41px;
+  height: 15px;
+}
+
+.switch input {
+  display:none;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  // background-color: #ccc;
+  background-image: url('../images/switch-inactive.png');
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 24px;
+  width: 24px;
+  left: 0px;
+  bottom: -4px;
+  // background-color: red;
+  background-image: url('../images/switch-button.png');
+  transition: .4s;
+}
+
+input:checked + .slider {
+  // background-color: transparent;
+  background-image: url('../images/switch-active.png');
+  // background-color: red;
+}
+
+input:checked + .slider:before {
+  transform: translateX(20px);
+}
+/* end toggle button */
