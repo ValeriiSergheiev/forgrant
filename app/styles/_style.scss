@@ -1,0 +1,91 @@
+.currency-select {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  border-radius: 10px;
+  background-color: rgba(252, 252, 252, 0.01);
+  border: 1px solid #2b3b45;
+  h2 {
+    color: $white;
+    font-size: 32px;
+    margin: 0;
+    flex: 1;
+    text-align: center;
+    min-width: 290px;
+    margin: 20px;
+  }
+}
+
+main {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+
+.ethereum {
+  background-image: url('../images/ethereum-bg.jpg');
+}
+
+.litecoin {
+  background-image: url('../images/litecoin-bg.jpg');
+}
+
+.bitcoin {
+  background-image: url('../images/bitcoin-bg.jpg');
+}
+
+.exchange-item {
+  width: 305px;
+  max-width: 305px;
+  padding: 20px 30px;
+  background-size: cover;
+  border-radius: 10px;
+  overflow: hidden;
+  box-sizing: border-box;
+  h3 {
+    font-size: 22px;
+    text-align: center;
+    color: $white;
+    margin-top: 0;
+  }
+  &-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 12px;
+  }
+}
+
+.price {
+  margin-top: 180px;
+  p {
+    color: $white;
+    font-size: 20px;
+    &.price-ask {
+      font-size: 21px;
+    }
+  }
+}
+
+.percent-change {
+  p {
+    color: $white;
+    font-size: 14px;
+  }
+}
+
+.change-row {
+  p {
+    color: $white;
+    font-size: 14px;
+    opacity: .3;
+  }
+}
+
+p.text-green {
+  font-size: 16px;
+  color: rgb(112,196,70);
+  opacity: 1;
+}

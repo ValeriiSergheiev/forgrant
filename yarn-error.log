@@ -1,0 +1,82 @@
+Arguments: 
+  /usr/bin/node /usr/local/bin/yarn install
+
+PATH: 
+  /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/valerii/Android/Sdk/tools:/home/valerii/Android/Sdk/platform-tools
+
+Yarn version: 
+  1.3.2
+
+Node version: 
+  8.11.4
+
+Platform: 
+  linux x64
+
+npm manifest: 
+  {
+    "private": true,
+    "engines": {
+      "node": ">=4"
+    },
+    "devDependencies": {
+      "babel-core": "^6.4.0",
+      "babel-preset-es2015": "^6.3.13",
+      "babel-register": "^6.5.2",
+      "browser-sync": "^2.2.1",
+      "del": "^2.2.0",
+      "gulp": "^3.9.0",
+      "gulp-autoprefixer": "^3.0.1",
+      "gulp-babel": "^6.1.1",
+      "gulp-cache": "^0.4.2",
+      "gulp-cssnano": "^2.0.0",
+      "gulp-eslint": "^3.0.0",
+      "gulp-filter": "^4.0.0",
+      "gulp-htmlmin": "^3.0.0",
+      "gulp-if": "^2.0.2",
+      "gulp-imagemin": "^3.0.1",
+      "gulp-load-plugins": "^1.2.4",
+      "gulp-plumber": "^1.0.1",
+      "gulp-sass": "^3.0.0",
+      "gulp-size": "^2.1.0",
+      "gulp-sourcemaps": "^2.2.0",
+      "gulp-uglify": "^2.0.0",
+      "gulp-useref": "^3.0.0",
+      "main-bower-files": "^2.5.0",
+      "run-sequence": "^1.2.2",
+      "wiredep": "^4.0.0"
+    },
+    "eslintConfig": {
+      "env": {
+        "es6": true,
+        "node": true,
+        "browser": true,
+        "jquery": true
+      },
+      "rules": {
+        "quotes": [
+          2,
+          "single"
+        ]
+      }
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+
+Trace: 
+  Error: connect ENETUNREACH 2400:cb00:2048:1::6810:1423:443 - Local (:::0)
+      at Object._errnoException (util.js:992:11)
+      at _exceptionWithHostPort (util.js:1014:20)
+      at internalConnect (net.js:960:16)
+      at defaultTriggerAsyncIdScope (internal/async_hooks.js:284:19)
+      at emitLookup (net.js:1106:9)
+      at /usr/local/lib/node_modules/yarn/lib/cli.js:94228:29
+      at /usr/local/lib/node_modules/yarn/lib/cli.js:94074:25
+      at RawTask.module.exports.RawTask.call (/usr/local/lib/node_modules/yarn/lib/cli.js:78685:19)
+      at flush (/usr/local/lib/node_modules/yarn/lib/cli.js:78767:29)
+      at _combinedTickCallback (internal/process/next_tick.js:131:7)

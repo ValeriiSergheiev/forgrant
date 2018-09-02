@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>www</title>
+
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <!-- build:css styles/vendor.css -->
+  <!-- bower:css -->
+  <link rel="stylesheet" href="/bower_components/jquery-nice-select/css/nice-select.css" />
+  <!-- endbower -->
+  <!-- endbuild -->
+
+  <!-- build:css styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- endbuild -->
+
+</head>
+<body>
+    <!--[if IE]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <div class="container">
+      <div class="currency-select">
+        <h2>Select currency to exhange:</h2>
+        <select name="" id="select" onchange="selectValue()">
+          <!-- <option data-display="Select">Nothing</option> -->
+          <option value="https://apiv2.bitcoinaverage.com/indices/global/ticker/BTCEUR">EUR</option>
+          <option value="https://apiv2.bitcoinaverage.com/indices/global/ticker/BTCRUB">RUB</option>
+          <option value="https://apiv2.bitcoinaverage.com/indices/global/ticker/BTCGBP">GBP</option>
+        </select>
+      </div>
+
+      <main>
+        <div class="exchange-item ethereum">
+          <h3>Ethereum</h3>
+          <div class="exchange-item-row price">
+            <p>Price:</p>
+            <p class="price-ask"></p>
+          </div>
+          <div class="exchange-item-row percent-change">
+            <p>Percent change</p>
+            <p>Percent-change</p>
+          </div>
+          <div class="exchange-item-row change-row">
+            <p>Hour change</p>
+            <p class="hour-change text-green"></p>
+          </div>
+          <div class="exchange-item-row change-row">
+            <p>Day change</p>
+            <p class="day-change text-green"></p>
+          </div>
+          <div class="exchange-item-row change-row">
+            <p>Week change</p>
+            <p class="week-change text-green"></p>
+          </div>
+          <div class="exchange-item-row change-row">
+            <p>Month change</p>
+            <p class="month-change text-green"></p>
+          </div>
+        </div>
+
+        <div class="exchange-item litecoin">
+          <h3>Litecoin</h3>
+          <div class="exchange-item-row price">
+            <p>Price:</p>
+            <p class="price-ask"></p>
+          </div>
+          <div class="exchange-item-row percent-change">
+            <p>Percent change</p>
+            <p>Percent-change</p>
+          </div>
+          <div class="exchange-item-row change-row">
+            <p>Hour change</p>
+            <p class="hour-change text-green"></p>
+          </div>
+          <div class="exchange-item-row change-row">
+            <p>Day change</p>
+            <p class="day-change text-green"></p>
+          </div>
+          <div class="exchange-item-row change-row">
+            <p>Week change</p>
+            <p class="week-change text-green"></p>
+          </div>
+          <div class="exchange-item-row change-row">
+            <p>Month change</p>
+            <p class="month-change text-green"></p>
+          </div>
+        </div>
+
+        <div class="exchange-item bitcoin">
+          <h3>Bitcoin</h3>
+          <div class="exchange-item-row price">
+            <p>Price:</p>
+            <p class="price-ask"></p>
+          </div>
+          <div class="exchange-item-row percent-change">
+            <p>Percent change</p>
+            <p>Percent-change</p>
+          </div>
+          <div class="exchange-item-row change-row">
+            <p>Hour change</p>
+            <p class="hour-change text-green"></p>
+          </div>
+          <div class="exchange-item-row change-row">
+            <p>Day change</p>
+            <p class="day-change text-green"></p>
+          </div>
+          <div class="exchange-item-row change-row">
+            <p>Week change</p>
+            <p class="week-change text-green"></p>
+          </div>
+          <div class="exchange-item-row change-row">
+            <p>Month change</p>
+            <p class="month-change text-green"></p>
+          </div>
+        </div>
+      </main>
+    </div>
+    
+    
+
+    <p id="out"></p>
+    
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+        function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+      e.src='https://www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+      ga('create','UA-XXXXX-X');ga('send','pageview');
+    </script>
+
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/bower_components/jquery-nice-select/js/jquery.nice-select.min.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+    
+    <!-- build:js scripts/main.js -->
+    <script src="scripts/main.js"></script>
+    <!-- endbuild -->
+  </body>
+  </html>
