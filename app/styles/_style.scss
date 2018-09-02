@@ -117,7 +117,6 @@ p.text-green {
   left: 0;
   right: 0;
   bottom: 0;
-  // background-color: #ccc;
   background-image: url('../images/switch-inactive.png');
   transition: .4s;
 }
@@ -129,15 +128,12 @@ p.text-green {
   width: 24px;
   left: 0px;
   bottom: -4px;
-  // background-color: red;
   background-image: url('../images/switch-button.png');
   transition: .4s;
 }
 
 input:checked + .slider {
-  // background-color: transparent;
   background-image: url('../images/switch-active.png');
-  // background-color: red;
 }
 
 input:checked + .slider:before {

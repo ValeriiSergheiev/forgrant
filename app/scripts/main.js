@@ -102,6 +102,5 @@ function toggleCheck() {
       monthChange[i].classList.toggle('text-red', monthChangeFlag)
     }
   }
-  // console.log(currencyObj);
 }
 
